@@ -6,5 +6,5 @@ const port = 3000
 app.use(router)
 
 app.listen(port, () => {
-  console.log(`TaoToyota app listening on port ${port}`)
+  console.log(`TaoToyota is now running at http://127.0.0.1:${port}/`)
 })
