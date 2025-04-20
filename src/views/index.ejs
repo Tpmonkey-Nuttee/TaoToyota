@@ -6,6 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>EJS template engine</h1>
+    <h1>TaoToyaTa</h1>
+    <a href="edit_product.html">จัดการสินค้า</a>
+    <a href="add_product.html">บันทึกสินค้า</a>
+    <h1>รายการสินค้า</h1>
+    <%Object.values(products).forEach(function(item){%>
+        <p>ชื่อสินค้า : <%= item.name%></p>
+        <p>ราคา : <%= item.price%></p>
+        <p>รายละเอียด : <%= item.description%></p>
+        <img src="<%= item.image%>" alt="" width="500">
+        <hr>
+    <% })%>
 </body>
 </html>
