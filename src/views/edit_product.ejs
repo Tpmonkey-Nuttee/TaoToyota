@@ -7,8 +7,8 @@
     </head>
     <body>
         <a href="/">homepage</a>
-        <a href="edit_product.html">จัดการสินค้า</a>
-        <a href="add_product.html">บันทึกสินค้า</a>
+        <a href="/edit">จัดการสินค้า</a>
+        <a href="/addform">บันทึกสินค้า</a>
         <div class="container">
             <h2>จัดการสินค้า</h2>
             <p>เพิ่ม ลบ แก้ไขข้อมูลในฐานข้อมูล</p>            
@@ -18,25 +18,20 @@
                         <th>ชื่อสินค้า</th>
                         <th>ราคา</th>
                         <th>รายละเอียด</th>
-                        <th>ลบ</th>
                         <th>แก้ไข</th>
+                        <th>ลบ</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <%Object.values(products).forEach(function(item){%>
                     <tr>
-                        <td>toyota</td>
-                        <td>1,000,000</td>
-                        <td>มือหนึ่ง อีกมือหนึ่งขาด</td>
-                        <td><button class="btn btn-danger">ลบ</button></td>
+                        <td><%= item.name%></td>
+                        <td><%= item.price%></td>
+                        <td><%= item.description%></td>
                         <td><button class="btn btn-primary">แก้ไข</button></td>
-                    </tr>
-                    <tr>
-                        <td>honda</td>
-                        <td>1,200,000</td>
-                        <td>.....</td>
                         <td><button class="btn btn-danger">ลบ</button></td>
-                        <td><button class="btn btn-primary">แก้ไข</button></td>
                     </tr>
+                    <% })%>
                 </tbody>
             </table>
         </div>
